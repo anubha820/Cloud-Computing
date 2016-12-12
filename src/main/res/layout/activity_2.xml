@@ -1,0 +1,155 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical"
+    android:background="@drawable/light"
+    android:padding="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_vertical"
+            android:orientation="vertical"
+            android:weightSum="1">
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="143dp"
+                    android:layout_height="60dp"
+                    android:src="@mipmap/black"
+                    android:layout_marginTop="20dp"/>
+                <ImageView
+                    android:id="@+id/ivImage"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="170dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="40dp"/>
+                <TableRow
+                    android:id="@+id/table_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"></TableRow>
+
+                <TableLayout
+                    android:id="@+id/table_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                        <TableRow
+                            android:id="@+id/tableRow1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/textView1"
+                                    android:textColor="#ffffff"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@layout/cell_shape"
+                                    android:padding="5dp"
+                                    android:text="Fancy or Casual?"
+                                    android:textSize="20dp"
+                                    android:fontFamily="sans-serif-condensed"></TextView>
+
+                                <TextView
+                                    android:id="@+id/textView2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@layout/cell_shape"
+                                    android:padding="5dp"
+                                    android:textColor="#ffffff"
+                                    android:textSize="20dp"
+                                    android:fontFamily="sans-serif-condensed"></TextView>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/tableRow2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/textView3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@layout/cell_shape"
+                                    android:padding="5dp"
+                                    android:text="Family Friendly?"
+                                    android:textSize="20dp"
+                                    android:textColor="#ffffff"
+                                    android:fontFamily="sans-serif-condensed"></TextView>
+
+                                <TextView
+                                    android:id="@+id/textView4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@layout/cell_shape"
+                                    android:padding="5dp"
+                                    android:textSize="20dp"
+                                    android:textColor="#ffffff"
+                                    android:fontFamily="sans-serif-condensed"></TextView>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/tableRow3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/textView5"
+                                    android:layout_width="wrap_content"
+                                    android:textSize="20dp"
+                                    android:layout_height="wrap_content"
+                                    android:background="@layout/cell_shape"
+                                    android:padding="5dp"
+                                    android:textColor="#ffffff"
+                                    android:text="TextView"
+                                    android:fontFamily="sans-serif-condensed"></TextView>
+
+                                <TextView
+                                    android:id="@+id/textView6"
+                                    android:textSize="20dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@layout/cell_shape"
+                                    android:padding="5dp"
+                                    android:textColor="#ffffff"
+                                    android:text="TextView"
+                                    android:fontFamily="sans-serif-condensed"></TextView>
+
+                        </TableRow>
+
+                        <TableRow
+                            android:id="@+id/tableRow4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/textView7"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@layout/cell_shape"
+                                    android:padding="5dp"
+                                    android:textColor="#ffffff"
+                                    android:textSize="20dp"
+                                    android:text="TextView"
+                                    android:fontFamily="sans-serif-condensed"></TextView>
+
+                                <TextView
+                                    android:id="@+id/textView8"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@layout/cell_shape"
+                                    android:textSize="20dp"
+                                    android:padding="5dp"
+                                    android:textColor="#ffffff"
+                                    android:text="TextView"
+                                    android:fontFamily="sans-serif-condensed"></TextView>
+
+                        </TableRow>
+                </TableLayout>
+        </LinearLayout>
+</LinearLayout>
