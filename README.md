@@ -1,5 +1,4 @@
-# CloudComputingApp
-Android application for DinnerTime project
+# Android application for DinnerTime project
 
 This code is for the DinnerTime Project. In order to run the code:
 1. Download the code and add it into Android Studio.
