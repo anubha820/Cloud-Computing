@@ -32,7 +32,7 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="-110dp"
+            android:layout_marginLeft="-98dp"
             android:background="#000000"
             android:padding="3dp"
             android:src="@mipmap/one"/>
@@ -47,7 +47,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="-100dp"
-            android:layout_marginLeft="110dp"
+            android:layout_marginLeft="98dp"
             android:background="#000000"
             android:padding="3dp"
             android:src="@mipmap/three" />
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_width="120dp"
             android:fontFamily="sans-serif-condensed"
-            android:background="#666699"
+            android:background="#6C6766"
             android:textColor="#ffffff"
             android:text="Select Photo" />
 

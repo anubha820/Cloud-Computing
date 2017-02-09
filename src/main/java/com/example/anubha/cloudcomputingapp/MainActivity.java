@@ -5,8 +5,10 @@ package com.example.anubha.cloudcomputingapp;
         import java.io.FileNotFoundException;
         import java.io.FileOutputStream;
         import java.io.IOException;
+        import java.net.HttpURLConnection;
 
         import android.app.Activity;
+        import android.graphics.BitmapFactory;
         import android.app.AlertDialog;
         import android.content.DialogInterface;
         import android.content.Intent;
@@ -21,7 +23,8 @@ package com.example.anubha.cloudcomputingapp;
         import android.widget.ImageView;
         import android.widget.LinearLayout;
         import android.view.LayoutInflater;
-        import android.widget.TextView;
+
+        import static com.example.anubha.cloudcomputingapp.R.layout.activity_2;
 
 public class MainActivity extends Activity {
 
@@ -31,8 +34,6 @@ public class MainActivity extends Activity {
     private String userChoosenTask;
     private LinearLayout mainview;
     private LinearLayout playerview;
-    private TextView textView2;
-    private TextView textView4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class MainActivity extends Activity {
         LayoutInflater inflater = LayoutInflater.from(this);
         setContentView(R.layout.activity_main);
         mainview = (LinearLayout) this.findViewById(R.id.LinearLayout1);
-        playerview = (LinearLayout) inflater.inflate(R.layout.activity_2,null);
+        playerview = (LinearLayout) inflater.inflate(activity_2,null);
         setContentView(mainview);
         btnSelect = (Button) findViewById(R.id.btnSelectPhoto);
         btnSelect.setOnClickListener(new OnClickListener() {
@@ -143,35 +144,42 @@ public class MainActivity extends Activity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        setContentView(playerview);
-        //setContentView -- when you click back it exits the application so you have to do this instead:
-        //Intent intent = new Intent(Main.this, Main2.class);
-        //startActivity(intent);
-        ivImage = (ImageView) findViewById(R.id.ivImage);
-        ivImage.setImageBitmap(thumbnail);
-        TextView textView2 = (TextView)findViewById(R.id.textView2);
-        textView2.setText("Fancy"); // this will be passed from the neural network
-        TextView textView4 = (TextView)findViewById(R.id.textView4);
-        textView4.setText("Good for Kids");
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        intent.putExtra("bmp",thumbnail);
+        startActivity(intent);
     }
 
     @SuppressWarnings("deprecation")
     private void onSelectFromGalleryResult(Intent data) {
 
+        Bitmap imgnew=null;
         Bitmap bm=null;
         if (data != null) {
             try {
-                bm = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(), data.getData());
+                imgnew = MediaStore.Images.Media.getBitmap(getApplicationContext().getContentResolver(), data.getData());
+                //BitmapFactory.Options bitmapOptions = new BitmapFactory.Options();
+                //int imageWidth = bitmapOptions.outWidth;
+                //int imageHeight = bitmapOptions.outHeight;
+                final int maxSize = 400;
+                int outWidth;
+                int outHeight;
+                int inWidth = imgnew.getWidth();
+                int inHeight = imgnew.getHeight();
+                if(inWidth > inHeight){
+                    outWidth = maxSize;
+                    outHeight = (inHeight * maxSize) / inWidth;
+                } else {
+                    outHeight = maxSize;
+                    outWidth = (inWidth * maxSize) / inHeight;
+                }
+                bm = Bitmap.createScaledBitmap(imgnew, outWidth, outHeight, false);
+                //bm = bm.createScaledBitmap(bm,outWidth,outHeight,true);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-       // setContentView(playerview);
-        ivImage = (ImageView) findViewById(R.id.ivImage);
-        ivImage.setImageBitmap(bm);
-        TextView textView2 = (TextView)findViewById(R.id.textView2);
-        textView2.setText("Fancy"); // same as above -- passed from the neural network
-        TextView textView4 = (TextView)findViewById(R.id.textView4);
-        textView4.setText("Good for Kids");
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+        intent.putExtra("bmp",bm);
+        startActivity(intent);
     }
 }

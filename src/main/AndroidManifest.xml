@@ -2,6 +2,7 @@
     <manifest package="com.example.anubha.cloudcomputingapp" xmlns:android="http://schemas.android.com/apk/res/android">
         <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
         <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <uses-permission android:name="android.permission.INTERNET" />
         <application android:theme="@style/AppTheme" android:label="@string/app_name" android:icon="@drawable/ic_launcher" android:allowBackup="true">
             <activity android:name="com.example.anubha.cloudcomputingapp.MainActivity" android:label="@string/app_name">
                 <intent-filter>
@@ -9,5 +10,6 @@
                     <category android:name="android.intent.category.LAUNCHER"/>
                 </intent-filter>
             </activity>
+            <activity android:name="com.example.anubha.cloudcomputingapp.SecondActivity" android:label="@string/app_name" />
         </application>
     </manifest>
